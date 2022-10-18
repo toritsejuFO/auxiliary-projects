@@ -37,7 +37,7 @@ while read -r NAME; do
   sudo chown -R $NAME:$NAME $USER_SSH_PATH
 
   echo "Adding public key to authorized_keys file for user ${NAME}"
-  CURRENT_USER_PUB_KEY="/home/${USER}/Shell/${PUBLIC_KEY_FILE}"
+  CURRENT_USER_PUB_KEY="/home/${USER}/auxiliary-projects/Shell/${PUBLIC_KEY_FILE}"
   sudo cat $CURRENT_USER_PUB_KEY | sudo tee $USER_AUTHORIZED_KEY_FILE > /dev/null
 
   echo "..."
