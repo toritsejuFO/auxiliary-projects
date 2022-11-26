@@ -38,7 +38,9 @@ while read -r NAME; do
 
   echo "Adding public key to authorized_keys file for user ${NAME}"
   CURRENT_USER_PUB_KEY="/home/${USER}/auxiliary-projects/Shell/${PUBLIC_KEY_FILE}"
-  sudo cat $CURRENT_USER_PUB_KEY | sudo tee $USER_AUTHORIZED_KEY_FILE > /dev/null
+  sudo cat $CURRENT_USER_PUB_KEY | sudo tee -a $USER_AUTHORIZED_KEY_FILE > /dev/null
 
   echo "..."
 done < $NAMES_FILE
+
+echo "Successfully onboarded all users"
